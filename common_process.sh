@@ -20,6 +20,11 @@ filepath=${target%/*}
 basename=${filename%.*}
 password_filepath=$script_dir/$PASSWORD_FILE
 
+# 同フォルダ内でfilepathが取れないので対応
+if [ $filename = $filepath ]; then
+	filepath="./"
+fi
+
 # get password
 if [ ! -e "$password_filepath" ]; then
         echo "[USAGE] write zip password in '$PASSWORD_FILE'"
