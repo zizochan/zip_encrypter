@@ -8,6 +8,6 @@ script_dir=$(cd $(dirname $0);pwd)
 cd $filepath && unzip -qeP $password $filename
 
 # finish
-echo "$target has been zip decryption by '$password'"
+echo "$target has been zip decryption"
 exit
 
