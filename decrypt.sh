@@ -18,7 +18,7 @@ cd $filepath && unzip -qeP $password $filename
 echo "$target has been zip decryption"
 
 # show files (for mac)
-open $filepath
+cd && cd $filepath && open ./
 
 exit
 
