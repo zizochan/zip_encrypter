@@ -12,13 +12,15 @@ case $filename in
 esac
 
 # unzip
-cd $filepath && unzip -qeP $password $filename
+pushd $filepath > /dev/null
+unzip -qeP $password $filename
+popd > /dev/null
 
 # finish
 echo "$target has been zip decryption"
 
 # show files (for mac)
-cd && cd $filepath && open ./
+open $filepath
 
 exit
 

@@ -12,7 +12,9 @@ case $filename in
 esac
 
 # zip
-cd $filepath && zip -qeP $password $basename.zip $filename;
+pushd $filepath > /dev/null
+zip -qeP $password $basename.zip $filename;
+popd > /dev/null
 
 # trash (for mac)
 mv $target ~/.Trash/
